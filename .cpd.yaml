@@ -1,0 +1,7 @@
+files:
+  - "**/*"
+exclude:
+  - '**/node_modules/**'
+min-tokens: 50
+min-lines: 2
+limit: 0
