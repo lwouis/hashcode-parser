@@ -16,6 +16,6 @@ function lineStream(folder: string, file: string): ReadLine {
 }
 
 export function testParser(folder: string, file: string, instructions: List<ParsingFunction>, expected: Object): void {
-  const input = List(readFileSync(inputFile(folder, file), 'utf-8').split('\n'))
+  const input = List(readFileSync(inputFile(folder, file), 'utf-8').split(/\r?\n/))
   expect(parse(input, instructions).toJSON()).toEqual(expected)
 }

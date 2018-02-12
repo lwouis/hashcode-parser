@@ -1,13 +1,13 @@
 import {List} from 'immutable'
 import {testParser} from './test-helpers'
-import {line, nLines} from '../src/parser'
+import {lines, nBlocks} from '../src/parser'
 
 describe('simple', () => {
   it('simple', () => {
     testParser('simple', 'simple',
         List.of(
-            nLines('a1', line('b', 'c')),
-            nLines('a2', line('b', 'c')),
+            nBlocks('a1', lines('b', 'c')),
+            nBlocks('a2', lines('b', 'c')),
         ),
         {
           'a1': [
@@ -29,5 +29,4 @@ describe('simple', () => {
         },
     )
   })
-
 })
